@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block title %}web app home{% endblock %}
+{% block contents %}
+<h1>web app home</h1>
+<br>
+<a href="{{ url_for('todolist.main') }}">go to todolist</a>
+{% endblock %}

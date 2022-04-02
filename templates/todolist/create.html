@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}create task{% endblock %}
+{% block contents %}
+<h1>create task</h1>
+<br>
+create task
+<br>
+<form action="{{ url_for('todolist.create') }}" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.description.label }}
+    {{ form.description }}<br>
+    {{ form.isFinished.label }}
+    {{ form.isFinished }}<br>
+    {{ form.submit }}
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}update task{% endblock %}
+{% block contents %}
+<h1>update task</h1>
+<br>
+update task
+<br>
+<form action="{{ url_for('todolist.update', id=id) }}" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.description.label }}
+    {{ form.description }}<br>
+    {{ form.isFinished.label }}
+    {{ form.isFinished }}<br>
+    {{ form.submit }}
+</form>
+{% endblock %}

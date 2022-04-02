@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %}todolist home{% endblock %}
+{% block contents %}
+<h1>todolist home</h1>
+<br>
+<a href="{{ url_for('todolist.create') }}">create new task</a>
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>description</th>
+            <th>is finished</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.isFinished }}</td>
+            <th><a href="{{ url_for('todolist.update', id=task.id) }}">update</a></th>
+            <th><a href="#">finish</a></th>
+            <th><a href="{{ url_for('todolist.delete', id=task.id) }}">delete</a></th>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}
