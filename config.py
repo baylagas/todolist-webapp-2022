@@ -7,6 +7,9 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     """ SQLALCHEMY_POOL_SIZE = 20
     SQLALCHEMY_POOL_TIMEOUT = 300 """
+    SQLALCHEMY_POOL_RECYCLE = 35  # value less than backend’s timeout
+    SQLALCHEMY_POOL_TIMEOUT = 7  # value less than backend’s timeout
+    SQLALCHEMY_PRE_PING = True
     SECRET_KEY = "horrible_secret_key"
     LOGIN_DISABLED = True
 
